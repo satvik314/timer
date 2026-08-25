@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Domain Time Tracker — Weekly Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="dashboard">
+    <main>
+      <header>
+        <h1>Weekly Dashboard</h1>
+        <p class="subtitle">Time per domain over the last 7 days</p>
+      </header>
+
+      <section>
+        <h2>Daily totals</h2>
+        <div id="chart" class="chart"></div>
+      </section>
+
+      <section>
+        <h2>Top domains this week</h2>
+        <ul id="week-list" class="domain-list"></ul>
+        <p id="empty" class="empty" hidden>No activity tracked this week.</p>
+      </section>
+
+      <section>
+        <h2>Per-day breakdown</h2>
+        <div id="days"></div>
+      </section>
+    </main>
+    <script type="module" src="dashboard.js"></script>
+  </body>
+</html>
