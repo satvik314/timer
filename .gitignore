@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Node (only used by tools/capture.mjs)
+node_modules/
+npm-debug.log*
+
+# Local capture output that isn't checked in
+tools/.chrome-profile/
+*.zip
