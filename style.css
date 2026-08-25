@@ -1,0 +1,212 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a2e;
+  --muted: #6b7280;
+  --accent: #4f6df5;
+  --accent-soft: #e3e8fd;
+  --border: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+h1 {
+  font-size: 18px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin: 24px 0 12px;
+}
+
+.empty {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* --- Domain list (popup + dashboard) ------------------------------------ */
+.domain-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.domain-list li {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  margin-bottom: 4px;
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 13px;
+}
+
+.domain-list .bar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--accent-soft);
+  border-radius: 6px;
+  z-index: 0;
+}
+
+.domain-list .domain {
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.domain-list .time {
+  position: relative;
+  z-index: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+/* --- Popup -------------------------------------------------------------- */
+.popup {
+  width: 340px;
+  padding: 14px;
+}
+
+.popup header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.popup .total {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.popup .domain-list {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.popup footer {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  text-align: right;
+}
+
+.popup footer a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+/* --- Dashboard ---------------------------------------------------------- */
+.dashboard main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+}
+
+.dashboard h1 {
+  font-size: 24px;
+}
+
+.dashboard .subtitle {
+  color: var(--muted);
+  margin: 4px 0 0;
+}
+
+.chart {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  height: 220px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.chart-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.chart-value {
+  font-size: 11px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.chart-bar-wrap {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.chart-bar {
+  width: 60%;
+  max-width: 48px;
+  background: var(--accent);
+  border-radius: 6px 6px 0 0;
+}
+
+.chart-label {
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+details {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+details table {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+details td {
+  padding: 4px 0;
+  border-top: 1px solid var(--border);
+}
+
+details td:last-child {
+  text-align: right;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
